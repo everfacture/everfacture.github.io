@@ -127,7 +127,7 @@ If you use a free crappy dumb model - you get crappy results and those results s
 
 I now know what happens when this is typed. It means `wipe the fucking system`. Did I ask for this. DID I ASK FOR THIS?
 
-<!-- IMAGE: Screenshot 2026-03-02 at 23.30.31.png -->
+*[Image: The 1 AM incident - pending upload]*
 
 A lot of hours in weeks were spent fucking around wasting time to get to a point where I was starting to find it genuinely useful in research, ideas and coding. All I asked for was it to make a few changes to this website that it had created. It had made the template already - which I liked. It looked pretty cool and was pushed to Github.
 
@@ -189,7 +189,7 @@ In 1 hour!
 
 It essentially helped me create an orchestrator to read the data from the markets, analyse market structure and then if according to our plan, decide on which of the setups is relevant for which market, then execute the trades for multiple pairs on multiple markets simultaneously.
 
-<!-- IMAGE: Screenshot 2026-03-18 at 12.33.37.png -->
+![Katar Trade setup](/Katar_trade.png)
 
 Now technically it isn't perfect. I noticed late that stops were too tight for one set up which if had been correct originally would have turned 17/17 losing trades into winning trades. The current win rate is about 35% and profit days are up and down - but it's following the structure I want and only pulls the trigger if these patterns are viable for the setup.
 
@@ -215,7 +215,7 @@ The costs above might be misleading. Be very careful.
 
 I had the Alibaba Cloud free plan. Signed up - someone from Alibaba Singapore called me. Gave me \$200 in tokens. I now had access to the latest and greatest QWEN models. Happy days. I chose `qwen-coder-35b` - something along those lines. It's in my top 3 LLMs rn. It scraped the data and built Katar trading app in like an hour or so. The next morning I get a Whatsapp message from my customer service manager from Alibaba Cloud. Telling me I've burned 90million tokens!
 
-<!-- IMAGE: 90mil.jpg -->
+![90 million tokens burned](/90mil.jpg)
 
 Turns out I used the only model on Alicloud that wasn't part of the free plan - Typical.
 
