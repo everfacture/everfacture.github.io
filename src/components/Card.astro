@@ -11,6 +11,11 @@ type Props = {
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
 const { title, description, ...props } = data;
+
+// Estimate reading time: ~200 words per minute, using description as proxy
+const wordCount = description.split(/\s+/).length;
+const readTimeMinutes = Math.max(1, Math.ceil(wordCount / 50));
+const readTimeText = `${readTimeMinutes} min read`;
 ---
 
 <li class="my-6">
@@ -28,6 +33,10 @@ const { title, description, ...props } = data;
       {title}
     </Heading>
   </a>
-  <Datetime {...props} />
-  <p>{description}</p>
+  <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+    <Datetime {...props} />
+    <span class="opacity-80">•</span>
+    <span>{readTimeText}</span>
+  </div>
+  <p class="mt-1">{description}</p>
 </li>

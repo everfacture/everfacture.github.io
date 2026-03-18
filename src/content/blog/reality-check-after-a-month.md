@@ -215,7 +215,7 @@ The costs above might be misleading. Be very careful.
 
 I had the Alibaba Cloud free plan. Signed up - someone from Alibaba Singapore called me. Gave me \$200 in tokens. I now had access to the latest and greatest QWEN models. Happy days. I chose `qwen-coder-35b` - something along those lines. It's in my top 3 LLMs rn. It scraped the data and built Katar trading app in like an hour or so. The next morning I get a Whatsapp message from my customer service manager from Alibaba Cloud. Telling me I've burned 90million tokens!
 
-![90 million tokens burned](/90mil.jpg)
+![90 million tokens burned](/alibaba-90mil.jpg)
 
 Turns out I used the only model on Alicloud that wasn't part of the free plan - Typical.
 

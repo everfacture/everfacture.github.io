@@ -2,23 +2,29 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import { SITE } from "@/config";
+import Card from "@/components/Card.astro";
+import { getCollection } from "astro:content";
+import getSortedPosts from "@/utils/getSortedPosts";
 import { SOCIALS } from "@/constants";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+const sortedPosts = getSortedPosts(posts);
 ---
 
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
-    <section id="hero" class="pt-16 pb-12">
+    <!-- Profile Section -->
+    <section id="hero" class="pt-16 pb-8">
       <div class="max-w-2xl">
         <h1 class="text-4xl font-bold mb-4 sm:text-5xl">
-          {SITE.title}
+          Hi, I'm Everfacture
         </h1>
         
         <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
-          {SITE.desc}
+          Building trading bots and tools that solve my problems. Currently in Surabaya, Indonesia. I build what I need and ship it — isn't that the whole point?
         </p>
 
         <div class="flex flex-wrap gap-3 mb-8">
@@ -60,6 +66,16 @@ import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
           </a>
         </div>
       </div>
+    </section>
+
+    <!-- Posts Timeline -->
+    <section id="posts" class="pt-4 pb-12">
+      <h2 class="text-2xl font-semibold mb-6">Latest Posts</h2>
+      <ul class="space-y-6">
+        {sortedPosts.map((post) => (
+          <Card {...post} variant="h3" />
+        ))}
+      </ul>
     </section>
   </main>
   <Footer />
