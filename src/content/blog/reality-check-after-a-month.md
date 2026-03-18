@@ -81,7 +81,7 @@ It worked out to $6 a month - so $144 on the hosting a plan. The creation of a b
 
 ## VPS: The Gateway Drug to Agency?
 
-> "What the hell is an SSH?"
+> What the hell is an SSH?
 
 I chose Hostinger because I couldn't get the free Oracle cloud to work. A simple calculation.
 
@@ -201,7 +201,7 @@ I don't think Openclaw should be used for coding proper but a good agent does ge
 
 ## The Cost Scoreboard (Feb 2026)
 
-> "I noticed your account had a \$200 expense yesterday...."
+> I noticed your account had a \$200 expense yesterday....
 
 | Item | Cost |
 |------|------|
