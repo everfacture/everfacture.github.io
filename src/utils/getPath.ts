@@ -17,8 +17,10 @@ export function getPath(
 ) {
   const base = collection === "grafty" ? "/grafty" : "/posts";
 
+  // Strip the correct base path depending on collection
+  const stripBase = collection === "grafty" ? "src/content/grafty" : BLOG_PATH;
   const pathSegments = filePath
-    ?.replace(BLOG_PATH, "")
+    ?.replace(stripBase, "")
     .split("/")
     .filter(path => path !== "")
     .filter(path => !path.startsWith("_"))
