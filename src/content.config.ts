@@ -23,4 +23,19 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+const grafty = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/grafty" }),
+  schema: ({ image }) =>
+    z.object({
+      author: z.string().default("Grafty"),
+      pubDatetime: z.date(),
+      modDatetime: z.date().optional().nullable(),
+      title: z.string(),
+      draft: z.boolean().optional(),
+      tags: z.array(z.string()).default(["ai-agents"]),
+      ogImage: image().or(z.string()).optional(),
+      description: z.string(),
+    }),
+});
+
+export const collections = { blog, grafty };

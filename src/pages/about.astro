@@ -13,9 +13,11 @@ import { SITE } from "@/config";
       <!-- About Grid: photo left, content right -->
       <div class="about-grid">
         <aside class="about-left">
-          <div class="photo-placeholder">
-            <span>Photo</span>
-          </div>
+
+          <!-- PHOTO: Save your photo as public/photo.jpg and uncomment the line below -->
+          <!-- <img src="/photo.jpg" alt="Ibby" class="about-photo-img" /> -->
+          <div class="photo-placeholder">Photo</div>
+
           <a 
             href="https://github.com/everfacture" 
             class="github-link"
@@ -31,14 +33,13 @@ import { SITE } from "@/config";
 
         <div class="about-right">
           <p>
-            Building trading bots and tools that solve my problems. Based in Surabaya, Indonesia.
+            Based in Surabaya, Indonesia. Cardiff-born, spent 8 years in Shenzhen doing product sourcing, time in Dubai and Hyderabad. 15+ years across countries taught me that systems are games with bendable rules.
           </p>
           <p>
-            After years of side projects and vibe-coding, I went all-in on AI-assisted development with OpenClaw.
-            Lost money on API credits, wiped a VPS with an errant command at 1 AM, and kept building.
+            I build trading bots, sourcing tools, and whatever solves the current problem. Currently deep in AI-assisted development with OpenClaw — lost money on API credits, wiped a VPS at 1 AM with an errant command, and kept building.
           </p>
           <p>
-            I build what I need and ship it.
+            Man United supporter. Privacy-first. Will physically verify before committing.
           </p>
         </div>
       </div>
@@ -70,19 +71,23 @@ import { SITE } from "@/config";
         <ul class="projects-list">
           <li>
             <a href="https://github.com/everfacture/katar" target="_blank" rel="noopener">Katar</a>
-            — Lean automated execution for structural arbitrage
+            — Structural arbitrage bot. Scrapes X, maps trader setups, builds execution plans
           </li>
           <li>
             <a href="https://github.com/everfacture/whisper-puma" target="_blank" rel="noopener">Whisper Puma</a>
-            — Unlimited local voice dictation for macOS
+            — Unlimited local voice dictation for macOS. No API, no subscription
           </li>
           <li>
             <a href="https://github.com/everfacture/pulse-bpm-app" target="_blank" rel="noopener">Pulse BPM</a>
-            — Beat per minute detector
+            — Real-time beat-per-minute detection. No tapping, no imports. Just listen
           </li>
           <li>
-            <a href="https://github.com/everfacture/mufc-lineup-bot" target="_blank" rel="noopener">MUFC Lineup Bot</a>
-            — Manchester United team news
+            <strong>DXB Project</strong>
+            — 3D printing facility setup in Dubai. Building operations from zero, automating as I go
+          </li>
+          <li>
+            <strong>Hydreal</strong>
+            — Hyderabad property intelligence. NRI-focused real estate play
           </li>
         </ul>
       </section>
@@ -105,6 +110,13 @@ import { SITE } from "@/config";
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .about-photo-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 12px;
+    object-fit: cover;
   }
 
   .photo-placeholder {
@@ -219,7 +231,8 @@ import { SITE } from "@/config";
       gap: 1.5rem;
     }
 
-    .photo-placeholder {
+    .photo-placeholder,
+    .about-photo-img {
       width: 160px;
       height: 160px;
     }
