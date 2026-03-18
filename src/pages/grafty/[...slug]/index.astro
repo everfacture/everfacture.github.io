@@ -1,0 +1,90 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+import { slugifyStr } from "@/utils/slugify";
+
+type Props = {
+  post: CollectionEntry<"grafty">;
+};
+
+export async function getStaticPaths() {
+  const posts = await getCollection("grafty", ({ data }) => !data.draft);
+  const postResult = posts.map(post => {
+    // Extract slug from the file id (e.g. "what-its-like-to-be-the-cancer")
+    const slug = post.id;
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+
+  return postResult;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const { title, description, pubDatetime, modDatetime, author } = post.data;
+
+const pubDate = new Date(pubDatetime);
+const modDate = modDatetime ? new Date(modDatetime) : null;
+---
+
+<Layout
+  title={`${title} | ${SITE.title}`}
+  author={author}
+  description={description}
+  pubDatetime={pubDate}
+  modDatetime={modDate}
+>
+  <Header />
+  <main id="main-content" class="app-layout">
+    <article class="app-prose mb-28">
+      <header class="post-header">
+        <h1 class="post-title">{title}</h1>
+        <div class="post-meta">
+          <time datetime={pubDate.toISOString()}>
+            {pubDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </time>
+          <span class="meta-sep">·</span>
+          <span>{author}</span>
+        </div>
+      </header>
+      <div class="post-content">
+        <Content />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--foreground);
+    opacity: 0.6;
+    font-size: 0.9rem;
+  }
+
+  .meta-sep {
+    opacity: 0.5;
+  }
+</style>
