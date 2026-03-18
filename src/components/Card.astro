@@ -3,19 +3,19 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@/utils/slugify";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
+import readingTime from "reading-time";
 
 type Props = {
   variant?: "h2" | "h3";
 } & CollectionEntry<"blog">;
 
-const { variant: Heading = "h2", id, data, filePath } = Astro.props;
+const { variant: Heading = "h2", id, data, filePath, body } = Astro.props;
 
 const { title, description, ...props } = data;
 
-// Estimate reading time: ~200 words per minute, using description as proxy
-const wordCount = description.split(/\s+/).length;
-const readTimeMinutes = Math.max(1, Math.ceil(wordCount / 50));
-const readTimeText = `${readTimeMinutes} min read`;
+// Calculate reading time from full post body content
+const readTimeMinutes = readingTime(body || description).minutes;
+const readTimeText = `${Math.ceil(readTimeMinutes)} min read`;
 ---
 
 <li class="my-6">

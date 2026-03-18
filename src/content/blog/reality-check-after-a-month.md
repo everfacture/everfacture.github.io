@@ -127,7 +127,7 @@ If you use a free crappy dumb model - you get crappy results and those results s
 
 I now know what happens when this is typed. It means `wipe the fucking system`. Did I ask for this. DID I ASK FOR THIS?
 
-*[Image: The 1 AM incident - pending upload]*
+*[Image: The 1 AM incident](/rm-rf-incident.png)*
 
 A lot of hours in weeks were spent fucking around wasting time to get to a point where I was starting to find it genuinely useful in research, ideas and coding. All I asked for was it to make a few changes to this website that it had created. It had made the template already - which I liked. It looked pretty cool and was pushed to Github.
 
