@@ -15,11 +15,13 @@ const sortedPosts = getSortedPosts(posts);
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
-    <!-- Profile Section -->
     <section id="hero" class="pt-10 pb-6">
       <div class="max-w-2xl">
 
-        <!-- Profile row: circular photo + blurb + socials -->
+        <!-- Top orange line -->
+        <div class="orange-line"></div>
+
+        <!-- Profile row: circular photo + blurb -->
         <div class="profile-row">
           <img 
             src="/ibby2.png" 
@@ -34,38 +36,38 @@ const sortedPosts = getSortedPosts(posts);
               No dev degree. No Plan. Just a VPS, some API keys and a couple of LLM's.<br />
               Showing off in public, breaking things in private. Shipping if it works.
             </p>
-            <div class="social-row">
-              <div class="social-links">
-                {SOCIALS.map((social) => (
-                  <a 
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link"
-                    title={social.linkTitle}
-                  >
-                    <social.icon class="w-5 h-5" />
-                    <span class="sr-only">{social.linkTitle}</span>
-                  </a>
-                ))}
+            <div class="social-links">
+              {SOCIALS.map((social) => (
                 <a 
-                  href="/rss.xml"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="social-link"
-                  title="RSS Feed"
+                  title={social.linkTitle}
                 >
-                  <IconRss class="w-5 h-5" />
-                  <span class="sr-only">RSS Feed</span>
+                  <social.icon class="w-5 h-5" />
+                  <span class="sr-only">{social.linkTitle}</span>
                 </a>
-              </div>
-              <div class="orange-line"></div>
+              ))}
+              <a 
+                href="/rss.xml"
+                class="social-link"
+                title="RSS Feed"
+              >
+                <IconRss class="w-5 h-5" />
+                <span class="sr-only">RSS Feed</span>
+              </a>
             </div>
           </div>
         </div>
 
+        <!-- Bottom orange line -->
+        <div class="orange-line"></div>
+
       </div>
     </section>
 
-    <!-- Posts Timeline -->
+    <!-- Posts -->
     <section id="posts" class="pt-6 pb-12">
       <ul class="space-y-6">
         {sortedPosts.map((post) => (
@@ -88,10 +90,19 @@ const sortedPosts = getSortedPosts(posts);
 </script>
 
 <style>
+  .orange-line {
+    width: 100%;
+    height: 2px;
+    background: #ff6b01;
+    border-radius: 1px;
+    margin: 0.75rem 0;
+  }
+
   .profile-row {
     display: flex;
     align-items: flex-start;
     gap: 1.75rem;
+    padding: 0.5rem 0;
   }
 
   .profile-avatar {
@@ -112,15 +123,10 @@ const sortedPosts = getSortedPosts(posts);
     margin-bottom: 0.4rem;
   }
 
-  .social-row {
-    margin-top: 0;
-  }
-
   .social-links {
     display: flex;
     align-items: center;
     gap: 0.15rem;
-    margin-bottom: 0.75rem;
   }
 
   .social-link {
@@ -137,13 +143,6 @@ const sortedPosts = getSortedPosts(posts);
   .social-link:hover {
     opacity: 1;
     color: #ff6b01;
-  }
-
-  .orange-line {
-    width: 100%;
-    height: 2px;
-    background: #ff6b01;
-    border-radius: 1px;
   }
 
   @media (max-width: 480px) {
