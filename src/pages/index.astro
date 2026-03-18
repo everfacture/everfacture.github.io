@@ -16,13 +16,13 @@ const sortedPosts = getSortedPosts(posts);
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
     <!-- Profile Section -->
-    <section id="hero" class="pt-16 pb-8">
+    <section id="hero" class="pt-10 pb-6">
       <div class="max-w-2xl">
 
         <!-- Profile row: circular photo + blurb -->
         <div class="profile-row">
           <img 
-            src="/ibby.jpeg" 
+            src="/ibby2.png" 
             alt="Ibby" 
             class="profile-avatar"
           />
@@ -31,12 +31,13 @@ const sortedPosts = getSortedPosts(posts);
               Hi, I'm Ibby
             </h1>
             <p class="text-lg text-muted-foreground leading-relaxed">
-              No dev background. No plan. Just a VPS, an API key, and a language model that keeps showing up.
+              No dev degree. No Plan. Just a VPS, some API keys and a couple of LLM's.<br />
+              Showing off in public, breaking things in private. Shipping if it works.
             </p>
           </div>
         </div>
 
-        <!-- Social links with orange divider -->
+        <!-- Social links: GitHub + RSS above orange line -->
         <div class="social-row">
           <div class="social-links">
             {SOCIALS.map((social) => (
@@ -60,6 +61,7 @@ const sortedPosts = getSortedPosts(posts);
               <span class="sr-only">RSS Feed</span>
             </a>
           </div>
+          <div class="orange-line"></div>
         </div>
 
       </div>
@@ -93,14 +95,15 @@ const sortedPosts = getSortedPosts(posts);
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0;
   }
 
   .profile-avatar {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: right center;
     flex-shrink: 0;
     border: 2px solid var(--border);
   }
@@ -110,14 +113,14 @@ const sortedPosts = getSortedPosts(posts);
   }
 
   .social-row {
-    padding-top: 1rem;
-    border-top: 2px solid #ff6b01;
+    margin-top: 1rem;
   }
 
   .social-links {
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    padding-bottom: 1rem;
   }
 
   .social-link {
@@ -136,6 +139,13 @@ const sortedPosts = getSortedPosts(posts);
     color: #ff6b01;
   }
 
+  .orange-line {
+    width: 100%;
+    height: 2px;
+    background: #ff6b01;
+    border-radius: 1px;
+  }
+
   @media (max-width: 480px) {
     .profile-row {
       flex-direction: column;
@@ -144,8 +154,8 @@ const sortedPosts = getSortedPosts(posts);
     }
 
     .profile-avatar {
-      width: 64px;
-      height: 64px;
+      width: 80px;
+      height: 80px;
     }
   }
 </style>
