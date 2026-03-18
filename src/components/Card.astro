@@ -9,9 +9,11 @@ type Props = {
   variant?: "h2" | "h3";
 } & CollectionEntry<"blog" | "grafty">;
 
-const { variant: Heading = "h2", id, data, filePath, body } = Astro.props;
+const { variant: Heading = "h2", id, data, filePath, body, collection } = Astro.props;
 
 const { title, description, ...props } = data;
+
+const postPath = getPath(id, filePath, true, collection as "blog" | "grafty");
 
 // Calculate reading time from full post body content
 const readTimeMinutes = readingTime(body || description).minutes;
@@ -20,7 +22,7 @@ const readTimeText = `${Math.ceil(readTimeMinutes)} min read`;
 
 <li class="my-6">
   <a
-    href={getPath(id, filePath)}
+    href={postPath}
     class:list={[
       "inline-block text-lg font-medium text-accent",
       "decoration-dashed underline-offset-4 hover:underline",
