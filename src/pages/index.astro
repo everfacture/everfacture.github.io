@@ -7,7 +7,6 @@ import { getCollection } from "astro:content";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SOCIALS } from "@/constants";
 import IconRss from "@/assets/icons/IconRss.svg";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 const sortedPosts = getSortedPosts(posts);
@@ -19,52 +18,50 @@ const sortedPosts = getSortedPosts(posts);
     <!-- Profile Section -->
     <section id="hero" class="pt-16 pb-8">
       <div class="max-w-2xl">
-        <h1 class="text-4xl font-bold mb-4 sm:text-5xl">
-          Hi, I'm Ibby
-        </h1>
-        
-        <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
-          Building trading bots and tools that solve my problems. Currently in Surabaya, Indonesia. I build what I need and ship it — isn't that the whole point?
-        </p>
 
-        <div class="flex flex-wrap gap-3 mb-8">
-          <a 
-            href="/posts" 
-            class="inline-flex items-center gap-2 px-4 py-2 bg-accent text-accent-foreground rounded-md hover:opacity-90 transition-opacity"
-          >
-            All Posts
-            <IconArrowRight class="inline-block w-4 h-4" />
-          </a>
-          <a 
-            href="/about" 
-            class="inline-flex items-center gap-2 px-4 py-2 border border-border rounded-md hover:bg-accent/10 transition-colors"
-          >
-            About
-          </a>
+        <!-- Profile row: circular photo + blurb -->
+        <div class="profile-row">
+          <img 
+            src="/ibby.jpeg" 
+            alt="Ibby" 
+            class="profile-avatar"
+          />
+          <div class="profile-intro">
+            <h1 class="text-4xl font-bold mb-3 sm:text-5xl">
+              Hi, I'm Ibby
+            </h1>
+            <p class="text-lg text-muted-foreground leading-relaxed">
+              No dev background. No plan. Just a VPS, an API key, and a language model that keeps showing up.
+            </p>
+          </div>
         </div>
 
-        <div class="flex items-center gap-4 text-muted-foreground">
-          {SOCIALS.map((social) => (
+        <!-- Social links with orange divider -->
+        <div class="social-row">
+          <div class="social-links">
+            {SOCIALS.map((social) => (
+              <a 
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                title={social.linkTitle}
+              >
+                <social.icon class="w-5 h-5" />
+                <span class="sr-only">{social.linkTitle}</span>
+              </a>
+            ))}
             <a 
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-accent transition-colors"
-              title={social.linkTitle}
+              href="/rss.xml"
+              class="social-link"
+              title="RSS Feed"
             >
-              <social.icon class="w-5 h-5" />
-              <span class="sr-only">{social.linkTitle}</span>
+              <IconRss class="w-5 h-5" />
+              <span class="sr-only">RSS Feed</span>
             </a>
-          ))}
-          <a 
-            href="/rss.xml"
-            class="hover:text-accent transition-colors"
-            title="RSS Feed"
-          >
-            <IconRss class="w-5 h-5" />
-            <span class="sr-only">RSS Feed</span>
-          </a>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -90,3 +87,65 @@ const sortedPosts = getSortedPosts(posts);
     }
   });
 </script>
+
+<style>
+  .profile-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--border);
+  }
+
+  .profile-intro h1 {
+    margin-bottom: 0.4rem;
+  }
+
+  .social-row {
+    padding-top: 1rem;
+    border-top: 2px solid #ff6b01;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    color: var(--foreground);
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+    border-radius: 4px;
+  }
+
+  .social-link:hover {
+    opacity: 1;
+    color: #ff6b01;
+  }
+
+  @media (max-width: 480px) {
+    .profile-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .profile-avatar {
+      width: 64px;
+      height: 64px;
+    }
+  }
+</style>
