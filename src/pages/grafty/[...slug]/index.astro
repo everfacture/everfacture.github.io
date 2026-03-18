@@ -3,6 +3,8 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Tag from "@/components/Tag.astro";
+import ShareLinks from "@/components/ShareLinks.astro";
 import { SITE } from "@/config";
 
 type Props = {
@@ -12,7 +14,6 @@ type Props = {
 export async function getStaticPaths() {
   const posts = await getCollection("grafty", ({ data }) => !data.draft);
   const postResult = posts.map(post => {
-    // Extract slug from the file id (e.g. "what-its-like-to-be-the-cancer")
     const slug = post.id;
     return {
       params: { slug },
@@ -26,7 +27,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const { title, description, pubDatetime, modDatetime, author } = post.data;
+const { title, description, pubDatetime, modDatetime, author, tags } = post.data;
 
 const pubDate = new Date(pubDatetime);
 const modDate = modDatetime ? new Date(modDatetime) : null;
@@ -51,9 +52,19 @@ const modDate = modDatetime ? new Date(modDatetime) : null;
           <span class="meta-sep">·</span>
           <span>{author}</span>
         </div>
+        {tags && tags.length > 0 && (
+          <ul class="post-tags">
+            {tags.map(tag => (
+              <Tag tag={tag} tagName={tag} size="sm" />
+            ))}
+          </ul>
+        )}
       </header>
       <div class="post-content">
         <Content />
+      </div>
+      <div class="post-footer">
+        <ShareLinks />
       </div>
     </article>
   </main>
@@ -81,9 +92,28 @@ const modDate = modDatetime ? new Date(modDatetime) : null;
     color: var(--foreground);
     opacity: 0.6;
     font-size: 0.9rem;
+    margin-bottom: 1rem;
   }
 
   .meta-sep {
     opacity: 0.5;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-content {
+    margin-bottom: 3rem;
+  }
+
+  .post-footer {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
   }
 </style>
