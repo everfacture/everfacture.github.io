@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Graft — Hustle & Headaches</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300;400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --font: 'Google Sans Code', 'Courier New', monospace;
+      --bg: #212737;
+      --fg: #eaedf3;
+      --muted: #8a93ad;
+      --accent: #ff6b01;
+      --border: #ab4b08;
+    }
+
+    [data-theme="light"] {
+      --bg: #fdfdfd;
+      --fg: #282728;
+      --muted: #6b6b6b;
+      --accent: #006cac;
+      --border: #ece9e9;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      font-size: 15px;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+    .site-header a.logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--fg);
+    }
+    .site-header a.logo:hover { text-decoration: none; }
+    .site-header nav { display: flex; gap: 1.25rem; font-size: 0.85rem; align-items: center; }
+    .site-header nav a { color: var(--muted); }
+    .site-header nav a:hover { color: var(--accent); }
+    .site-header nav a.active { color: var(--fg); font-weight: 500; }
+
+    /* Hero */
+    .hero { margin-bottom: 2.5rem; }
+    .hero h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .hero .meta { color: var(--muted); font-size: 0.85rem; }
+    .hero .meta .weather { margin-left: 0.5rem; }
+    .orange-line { width: 100%; height: 1px; background: var(--accent); margin-top: 1rem; }
+
+    /* Section */
+    .section { margin-bottom: 2.5rem; }
+    .section h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Overview bullets */
+    .overview { list-style: none; padding: 0; }
+    .overview li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .overview li::before {
+      content: "- ";
+      color: var(--accent);
+    }
+
+    /* News item */
+    .news-item { margin-bottom: 1.75rem; }
+    .news-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .news-item h3 a { color: var(--fg); }
+    .news-item h3 a:hover { color: var(--accent); }
+    .news-item p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .news-item .source {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Archive */
+    .archive { margin-top: 2rem; }
+    .archive h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .archive ul { list-style: none; padding: 0; }
+    .archive li { padding: 0.2rem 0; font-size: 0.85rem; }
+    .archive li a { color: var(--muted); }
+    .archive li a:hover { color: var(--accent); }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Theme toggle */
+    .theme-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 0.25rem;
+      font-size: 1rem;
+    }
+    .theme-btn:hover { color: var(--accent); }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+    .meta-sep { opacity: 0.5; }
+    .roundup .overview li { font-size: 0.9rem; line-height: 1.6; }
+    @media (max-width: 480px) {
+      body { padding: 1rem; font-size: 14px; }
+      .hero h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="https://ibby.is-a.dev" class="logo">Hustle & Headaches</a>
+    <nav>
+      <a href="https://ibby.is-a.dev">Posts</a>
+      <a href="https://ibby.is-a.dev/headaches">Headaches</a>
+      <a href="/the-graft.html" class="active">The Graft</a>
+      <a href="https://ibby.is-a.dev/about">About</a>
+      <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">◐</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>The Graft</h1>
+    <p class="meta">Tuesday, March 24, 2026 <span class="meta-sep">·</span> <span id="weather">Loading weather...</span></p>
+    <p class="tagline">Indonesian news. English. No fluff.</p>
+    <div class="orange-line"></div>
+  </section>
+
+  <section class="section roundup">
+    <h2>⚡ Today's Roundup</h2>
+    <ul class="overview">
+      <li>Banyuwangi's ancient Seblang Olehsari ritual has begun, featuring trance dances and a communal feast to cleanse the village.</li>
+      <li>Authorities warn of extreme weather risks for those returning from Lebaran, urging caution on roads and ferries.</li>
+      <li>A Mojokerto resident lost their car to a thief using a fake bank transfer scam, highlighting digital transaction risks.</li>
+      <li>East Java's former governor Khofifah lauded volunteers for their swift disaster response, particularly in Lumajang.</li>
+      <li>Concerns rise over Indonesia's ability to meet its 2030 TB elimination target, with experts calling for intensified efforts.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>⚡ Tech & Startups</h2>
+    
+    <div class="news-item">
+      <h3><a href="https://dailysocial.id/p/climate-capital-moves-creators-level" target="_blank">Indonesia's Digital Ecosystem: Green Cash, Creator IPOs, Wiki Back</a></h3>
+      <p>Indonesia's tech scene is maturing, with Terratai seeking $85M for nature-based finance and RANS Entertainment eyeing the public market. Infrastructure players are scaling, and Wikimedia's return signals a more open digital environment. QRIS expanding cross-border and clearer green finance policies are positioning Indonesia for innovation and sustainability.</p>
+      <div class="source">DailySocial RISE</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://dailysocial.id/p/goto-pushes-profitability-kredivo" target="_blank">Indo Digital Scene: GoTo Chases Profit, Kredivo Goes Regional</a></h3>
+      <p>Indonesia's digital economy is maturing. GoTo is pushing for profitability, while fintech player Kredivo expands into Vietnam. Other players like Bank Jago, Superbank, and Bukalapak (now into gaming) are also gaining traction. This signals a shift towards more sustainable business models and regional expansion, impacting investment opportunities and the broader digital landscape.</p>
+      <div class="source">DailySocial RISE</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://dailysocial.id/p/discover-indonesias-startup-resilience" target="_blank">Indonesia's Startup Funding Reset</a></h3>
+      <p>Indonesia's startup ecosystem saw USD 355.7 million in funding across 91 deals in 2025, a sharp drop from 2021's USD 6.9 billion peak, signalling a shift to disciplined growth. New Retail led with USD 130.9 million, followed by Fintech (USD 77.2 million) and E-Commerce (USD 35.8 million). M&A is now the primary exit strategy, with debt funding hitting USD 264 million, indicating a focus on cash flow and maturity. This reset impacts investment opportunities and the digital economy landscape.</p>
+      <div class="source">DailySocial RISE</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>📦 Trade & Logistics</h2>
+    
+    <div class="news-item">
+      <h3><a href="https://jatim.antaranews.com/berita/1049754/minister-urges-logistics-firms-to-follow-eid-transport-rules" target="_blank">Eid Logistics Clampdown</a></h3>
+      <p>Transportation Minister Dudy Purwagandhi is forcing logistics firms to halt freight vehicles with three or more axles from March 13-29, 2026. This joint decree, aimed at easing Eid al-Fitr return flow for an estimated 143.9 million travellers, will impact supply chains and delivery schedules across Indonesia, including Surabaya. Expect potential delays and increased costs for goods during this period.</p>
+      <div class="source">Antara News Jatim - Terkini</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>💰 Business & Money</h2>
+    
+    <div class="news-item">
+      <h3><a href="https://dailysocial.id/p/somethinc-in-play-idx-tightens-rules" target="_blank">Somethinc Eyeing Sale, IDX Tightens Up</a></h3>
+      <p>Indonesian beauty brand Somethinc is reportedly looking for a buyer after years of rapid growth in the mass-premium skincare market. This signals continued investor confidence in Indonesia's consumer sector, especially for digital-first brands, as consolidation heats up across Southeast Asia's beauty scene. Keep an eye on this; it's a bellwether for local brand valuations.</p>
+      <div class="source">DailySocial RISE</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🏙️ Street Level</h2>
+    
+    <div class="news-item">
+      <h3><a href="https://jatim.antaranews.com/berita/1049770/ritual-seblang-olehsari-banyuwangi-digelar-tujuh-hari-berturut-turut" target="_blank">Banyuwangi's Seblang Olehsari Ritual Kicks Off</a></h3>
+      <p>The annual Seblang Olehsari dance ritual in Banyuwangi, Jawa Timur, runs for seven consecutive days, starting Monday. This traditional event, held yearly in Desa Olehsari, Kecamatan Glagah, is a 'tolak bala' (ward off evil) and village cleansing ceremony. Bupati Banyuwangi Ipuk Fiestiandani noted its cultural significance and its draw for tourists during the Lebaran holiday period.</p>
+      <div class="source">Antara News Jatim - Terkini</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://www.suarasurabaya.net/kelanakota/2026/mobil-warga-mojokerto-dibawa-kabur-pembeli-dengan-modus-transfer-fiktif-dan-rekening-diblokir-rugi-rp87-juta/" target="_blank">Mojokerto Car Swiped in Fake Transfer Scam</a></h3>
+      <p>A Mojokerto resident, Achmad, lost his 2012 Mitsubishi Mirage (S 1622 WL) after a buyer used a fake Rp87 million transfer. The scammer, claiming to be in Surabaya, blocked Achmad's BNI m-banking and ATM access, then pressured him to hand over the vehicle. This is a straight-up fraud, a common street-level risk for private sellers.</p>
+      <div class="source">Suara Surabaya</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://jatim.antaranews.com/berita/1049570/anggota-dprd-surabaya-minta-perbaikan-pju-jalan-dupak" target="_blank">Dupak Street Lights: Crime Risk flagged</a></h3>
+      <p>Surabaya DPRD member Azhar Kahfi is demanding urgent repairs to public street lighting (PJU) on Jalan Dupak. This follows a recent alleged stabbing of two teenagers on March 20, 2026, near the PGS Pasar Turi petrol station, with dark conditions cited as a major factor in rising crime. The lack of proper lighting and surveillance (CCTV) in this area is a clear safety concern for anyone moving goods or people through the city.</p>
+      <div class="source">Antara News Jatim - Surabaya</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://jatim.antaranews.com/berita/1049082/shalat-idul-fitri-1447-h-di-surabaya" target="_blank">Idul Fitri Prayer Sees Surabaya Streets Jammed</a></h3>
+      <p>Surabaya saw massive crowds for Idul Fitri 1447 H prayers on Saturday, 21/3/2026. The Masjid Roudhotul Musyawarah (Masjid Kemayoran) was packed, with worshippers spilling out onto Jalan Indrapura. Expect temporary road closures and heavy foot traffic around major mosques during these religious holidays.</p>
+      <div class="source">Antara News Jatim - Surabaya</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>📋 Government & Tenders</h2>
+    
+    <div class="news-item">
+      <h3><a href="https://www.suarasurabaya.net/kelanakota/2026/kapolri-instruksikan-antisipasi-cuaca-ekstrem-saat-arus-balik-lebaran-2026/" target="_blank">Lebaran Return: Weather Warning</a></h3>
+      <p>Police Chief Listyo Sigit Prabowo has ordered forces to prep for extreme weather during the Lebaran 2026 return flow, particularly at ferry crossings. This comes as the peak return is expected between 26-28 March, with a spread until 27 March due to Work From Anywhere policies. Expect potential travel disruptions and delays, impacting logistics and personal travel plans.</p>
+      <div class="source">Suara Surabaya</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://jatim.antaranews.com/berita/1049766/khofifah-apresiasi-tagana-sebagai-garda-terdepan-penanganan-bencana" target="_blank">Khofifah Praises Disaster Volunteers</a></h3>
+      <p>Jawa Timur Governor Khofifah Indar Parawansa lauded Taruna Siaga Bencana (Tagana) for 22 years of frontline disaster response and humanitarian aid across the province. She highlighted their crucial role in mitigation, post-disaster logistics, and psychosocial support for vulnerable groups. The provincial government, via Dinas Sosial, commits to boosting Tagana's welfare and capacity with operational aid, training, and equipment, aiming for more professional and adaptive disaster management.</p>
+      <div class="source">Antara News Jatim - Terkini</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://www.suarasurabaya.net/kelanakota/2026/kasus-tb-masih-tinggi-akademisi-pertanyakan-target-bebas-tb-2030-di-indonesia/" target="_blank">TB Target 2030: A Pipe Dream?</a></h3>
+      <p>Indonesia, second globally for TB cases with 1.09 million estimated infections and 134,000 annual deaths, faces a serious challenge to its 2030 elimination target. Dr. Ari Baskoro from Unair's Faculty of Medicine questions the feasibility, citing the disease's complexity beyond simple contagion. This isn't just a health issue; it flags potential strain on public health infrastructure and workforce productivity, impacting the broader economic outlook.</p>
+      <div class="source">Suara Surabaya</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://jatim.antaranews.com/berita/1049722/bpkh-berangkatkan-ratusan-peserta-program-balik-kerja-dari-surabaya" target="_blank">BPKH Funds Post-Eid Commute</a></h3>
+      <p>The Hajj Fund Management Agency (BPKH) sent 675 Surabaya workers back to Jakarta and surrounding areas after Eid holidays, using 15 buses. This "Balik Kerja Bareng BPKH" program, funded by the *Dana Abadi Umat* (Endowment Fund for the Ummah), not hajj deposits, aims for safe and affordable travel. It's a free service, including basic provisions, for those returning to work, with 1,412 applicants for 675 spots in Surabaya alone. Nationally, 2,700 participants were accommodated from four cities.</p>
+      <div class="source">Antara News Jatim - Surabaya</div>
+    </div>
+
+    <div class="news-item">
+      <h3><a href="https://dailysocial.id/p/digital-safeguards-rise-ai-commerce" target="_blank">Digital Age: Kids Banned, Fitch Stays Bullish</a></h3>
+      <p>Indonesia's government is clamping down on youth social media access, enforcing a minimum age from March 28, 2026. This move aims to force platforms into better child protection, potentially affecting user growth metrics for some tech firms. Despite Fitch maintaining Indonesia's investment-grade rating, the digital economy continues its push with fintech, connectivity, and EV partnerships, signalling long-term confidence and ongoing capital inflows.</p>
+      <div class="source">DailySocial RISE</div>
+    </div>
+  </section>
+
+  <section class="archive">
+    <h2>Previous Editions</h2>
+    <ul>
+      <li><a href="archive/2026-03-24.html">Tue, Mar 24</a></li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <p>Indonesian news. English. No fluff. · <a href="https://ibby.is-a.dev">Hustle & Headaches</a></p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+    // Fetch Surabaya weather
+    fetch('https://wttr.in/Surabaya?format=%c+%t+%h')
+      .then(r => r.text())
+      .then(t => { document.getElementById('weather').textContent = t.trim(); })
+      .catch(() => { document.getElementById('weather').textContent = 'Surabaya'; });
+  </script>
+</body>
+</html>
