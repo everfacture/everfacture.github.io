@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://github.com/everfacture",
   desc: "Memoir of building, life, and the headaches in between.",
   title: "Hustle & Headaches",
-  ogImage: "og.png",
+  ogImage: "https://ibby.is-a.dev/og.png",
   lightAndDarkMode: true,
   postPerIndex: 10,
   postPerPage: 10,
