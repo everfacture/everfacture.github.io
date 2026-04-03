@@ -22,14 +22,16 @@ const {
   author = SITE.author,
   profile = SITE.profile,
   description = SITE.desc,
-  ogImage = SITE.ogImage ? `/${SITE.ogImage}` : "/og.png",
+  ogImage = SITE.ogImage
+    ? (SITE.ogImage.startsWith("http") ? SITE.ogImage : `/${SITE.ogImage}`)
+    : "/og.png",
   canonicalURL = new URL(Astro.url.pathname, Astro.url),
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
 } = Astro.props;
 
-const socialImageURL = new URL(ogImage, Astro.url);
+const socialImageURL = ogImage.startsWith("http") ? ogImage : new URL(ogImage, Astro.url);
 
 const structuredData = {
   "@context": "https://schema.org",
