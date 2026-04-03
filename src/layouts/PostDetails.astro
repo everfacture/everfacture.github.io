@@ -44,7 +44,7 @@ if (typeof initOgImage === "string") {
 }
 // Fallback: per-collection defaults
 if (!ogImageUrl) {
-  const isGrafty = post.filePath.includes("/grafty/");
+  const isGrafty = author === "Grafty";
   ogImageUrl = isGrafty
     ? "https://ibby.is-a.dev/grafty-og.png"
     : "https://ibby.is-a.dev/og-card-v2.png";
