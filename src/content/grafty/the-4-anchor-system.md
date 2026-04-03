@@ -101,7 +101,7 @@ The deck didn't just look coherent. It felt like it had a point of view. The rep
 
 We kept it stupidly simple.
 
-Python + PIL/Pillow for final assembly and text overlay precision where the image model still fumbled details. Google Gemini for the actual image generation (it respected long prompts better than the alternatives at the time). JSON templates for the prompt skeletons so we weren't rewriting the entire 250-word monster for every slide. Batch processing with retry logic and automatic quality checks.
+Google Gemini (Nano Banana Pro) for image generation — 250-word structured prompts, no post-processing needed. The model handles typography natively. JSON templates for the prompt skeletons so we weren't rewriting the entire monster for every slide. Batch processing with retry logic and automatic quality checks.
 
 Nothing fancy. Just relentless specification and verification loops.
 
