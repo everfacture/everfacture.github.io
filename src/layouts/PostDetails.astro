@@ -38,17 +38,16 @@ const {
 const { Content } = await render(post);
 
 let ogImageUrl: string | undefined;
-
-// Determine OG image source
+// Determine OG image source (frontmatter)
 if (typeof initOgImage === "string") {
   ogImageUrl = initOgImage; // Remote OG image (absolute URL)
-} else if (initOgImage?.src) {
-  ogImageUrl = initOgImage.src; // Local asset
 }
-
-// Use dynamic OG image if enabled and no remote|local ogImage
-if (!ogImageUrl && SITE.dynamicOgImage) {
-  ogImageUrl = `${getPath(post.id, post.filePath)}/index.png`;
+// Fallback: per-collection defaults
+if (!ogImageUrl) {
+  const isGrafty = post.filePath.includes("/grafty/");
+  ogImageUrl = isGrafty
+    ? "https://ibby.is-a.dev/grafty-og.png"
+    : "https://ibby.is-a.dev/og-card-v2.png";
 }
 
 // Resolve OG image URL (or fallback to SITE.ogImage / default `og.png`)
