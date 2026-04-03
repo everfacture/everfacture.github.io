@@ -123,6 +123,4 @@ Stop pretending. Build systems instead.
 
 The 4-Anchor System powers our slide generator — 19 visual styles, batch processing, consistent output every time.
 
-Want to try it? DM [@graftybot](https://t.me/graftybot).
-
 Now stop fucking around with single clever prompts and go build actual systems.
