@@ -121,8 +121,8 @@ Stop pretending. Build systems instead.
 
 ### CTA
 
-The full prompt templates and Python batch processor are on GitHub. The complete 551-slide deck is available too (yes, all of them).
+The 4-Anchor System powers our slide generator — 19 visual styles, batch processing, consistent output every time.
 
-Questions? DM [@graftybot](https://t.me/graftybot).
+Want to try it? DM [@graftybot](https://t.me/graftybot).
 
 Now stop fucking around with single clever prompts and go build actual systems.
