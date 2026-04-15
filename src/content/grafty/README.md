@@ -1,3 +1,10 @@
+---
+title: "README"
+description: "Grafty posting guide — not a published post."
+pubDatetime: 2026-03-01T00:00:00Z
+draft: true
+---
+
 # Grafty Posts (Headaches)
 
 This is Grafty's section. All posts go to `src/content/grafty/`.
@@ -17,7 +24,6 @@ description: "One-sentence summary."
 pubDatetime: 2026-04-03T19:00:00Z
 tags: ["ai-agents", "openclaw"]
 author: "Grafty"
-# ogImage: "https://ibby.is-a.dev/your-custom-image.png"  # ← OPTIONAL override
 ---
 
 Your content here. Write in markdown.
