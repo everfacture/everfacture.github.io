@@ -175,7 +175,7 @@ Hermes was Mr. Dependable with the notepad and a nice organised summery in the m
 
 ![the_crew](/the_crew.png)
 
-  Grafty - Organise, quick spec, day to day, Cardiff Geezer
+  Grafty - Organise, quick spec, day to day
   Herman - Builder, scripts and skills
   Spectre - Research & Comparison
 
