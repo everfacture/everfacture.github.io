@@ -176,7 +176,9 @@ Hermes was Mr. Dependable with the notepad and a nice organised summery in the m
 ![the_crew](/the_crew.png)
 
   Grafty - Organise, quick spec, day to day
+  
   Herman - Builder, scripts and skills
+  
   Spectre - Research & Comparison
 
 The claw researcher (Spectre). I wanted a mix between curiosity Anthony Bourdain and investigative Sherlock homes with the bigger picture thinking of Professor Jiang. - More recently I've tweaked it into a forensic investigator.
