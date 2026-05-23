@@ -58,10 +58,13 @@ It helps that these models are now only a few points lower than the big boys for
 Every week something state of the art is released. Which as of now is ~~[Gemini](https://x.com/altryne/status/2056793526755840187?s=20)~~ apparently - by the time I post this the frontier will have moved and something [shinier](https://artificialanalysis.ai/models/qwen3-7-max) will be on the scene. 
 
 ---
+~_[Google DeepMind CEO](https://youtu.be/JNyuX1zoOgU?t=160)_
 
->we need one or two more big breakthroughs before we’ll get to AGI. ~ _[Google DeepMind CEO](https://youtu.be/JNyuX1zoOgU?t=160)_ 
+>We need one or two more big breakthroughs before we’ll get to AGI. 
 
->we are going to need two more events on the scale of the fire and the wheel…..and we have that scheduled for Q3 ~ _[Translation](https://x.com/atmoio/status/2057837439708762562?s=20)_
+~_[Translation](https://x.com/atmoio/status/2057837439708762562?s=20)_
+
+>We are going to need two more events, on the scale of the fire and the wheel…..and we have that scheduled for Q3
 
 ---
 
