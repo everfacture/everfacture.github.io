@@ -27,7 +27,7 @@ _2 months later. Tuition fees paid._
 ---
 # Tuition Fees
 
-The first months bill was steep and can't say the second or third was much better for the wallet. I know more about servers, LLMs, agentic engineering, architecture and systems now than I did 2 months ago. The flow of data is clearer. Processes that were once alien have become natural. This round I have been smarter about it.  The tuition was real. At least the floor's higher now.
+The first months bill was steep and can't say the second or third was much better for the wallet. I know more about servers, LLMs, agentic engineering, architecture and systems now than I did 2 months ago. The flow of data is clearer. Processes that were once alien have become natural. This round I have been smarter about it.  What didn't kill me (in a financial, health & emotional regard) raised the floor at least.
 
 | Item                           | Mar     | Apr     |
 | ------------------------------ | ------- | ------- |
