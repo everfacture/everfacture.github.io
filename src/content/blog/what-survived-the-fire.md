@@ -27,7 +27,7 @@ _2 months later. Tuition fees paid._
 ---
 # Tuition Fees
 
-The first months bill was steep and can't say the second or third was much better for the wallet. I know more about servers, LLMs, agentic engineering, architecture and systems now than I did 2 months ago. The flow of data is clearer. Processes that were once alien have become natural. This round I have been smarter about it.  What didn't kill me (in a financial, health & emotional regard) raised the floor at least.
+The first months bill was steep and can't say the second or third was much better for the wallet. I know more about servers, LLMs, agentic engineering, architecture and systems now than I did 2 months ago. The flow of data is clearer. Processes that were once alien have become natural. This round I have been smarter about it.  What didn't kill me (financially, emotionally) was a floor raiser.
 
 | Item                           | Mar     | Apr     |
 | ------------------------------ | ------- | ------- |
@@ -77,13 +77,13 @@ We move and we tweak. Data signal layer is the bottleneck preventing me from dep
 
 The hit to the income stream due to this war was like a knee square to the nuts. Shipping from China has been affected meaning a couple of my big earners are blocked for the time being. This gave me time to pivot & work on a few local things here in Indonesia, attend more language classes in and tinker some more with agents and LLMs.
 
-Referencing for academia in the English language kills me. So you can imagine how I feel in Indonesian. I fired up Grafty and told him to help with the presentation. 
+Referencing for academia in the English language kills me. In Indonesian tidak bagus. I fired up Grafty and told him membantu with the presentation. 
 
 ![agarwood_format_graft](/agarwood_format_graft.png)
 
 ---
 
-I was running this openclaw agent on a free openrouter stealth model called `hunter-alpha` (later revealed as `xiaomi/mimo-v2-pro`). Word on the street was that it was the latest and greatest DeepSeek model. I used it for free for a month and it was surprisingly better at agentic tasks then anything else I had experienced. I still had a paid `kimi-k2.5` model which I would use for subagent tasks to research and build a few tools for me as back up. 
+I was running this openclaw instance on a free openrouter stealth model called `hunter-alpha` (later revealed as `xiaomi/mimo-v2-pro`). Word on the street was that it was the latest and greatest DeepSeek model. I used it for a month before the great reveal and it was surprisingly better at agentic tasks then anything else I had experienced. I still had a paid `kimi-k2.5` model which I would use for subagent tasks to research and build a few tools for me as back up. 
 
 I asked a simple question:
 
@@ -96,7 +96,9 @@ _we iterated for a few hours_
 Lovely. Beautiful slides. Consistent and easy on the eye. Pipeline workable. Seed planted. 
 
 scripts/slides-generator/
+
 ├── generate.py    # The working script
+
 └── README.md      # System docs + prompt formula
 
 ---
