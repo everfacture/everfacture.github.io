@@ -95,6 +95,7 @@ _we iterated for a few hours_
 
 Lovely. Beautiful slides. Consistent and easy on the eye. Pipeline workable. Seed planted. 
 
+
 scripts/slides-generator/
 
 ├── generate.py    # The working script
@@ -140,7 +141,7 @@ For the 72nd time in our short history. Openclaw was broken.
 
 All the seperate threads moving at the same time was clogging up the system on my measly VPS. This was around the the time openclaw updates were giving a lot of issues so probably a culmination of all of that and bad luck. 
 
-It was also around the time [Peter](https://x.com/steipete/status/2036023183351161136?s=20) was burning $15k/month of his own dime maintaining the greatest OSS to come out since Linux & very likely finalising a deal worth "[well under $1 billion](https://www.entrepreneur.com/business-news/coders-weekend-ai-project-sparks-a-bidding-war/502786)". Don't blame him. Now Steinberger's team is burning **$1.3 million per month in OpenAI API tokens** running ~100 Codex agents. All part of the package baby.
+It was also around the time [Peter](https://x.com/steipete/status/2036023183351161136?s=20) was burning $15k/month of his own dime maintaining the greatest OSS to come out since Linux & very likely finalising a deal with OpenAI worth "[well under $1 billion](https://www.entrepreneur.com/business-news/coders-weekend-ai-project-sparks-a-bidding-war/502786)". Don't blame him. Now Steinberger's team is burning **$1.3 million per month in OpenAI API tokens** running ~100 Codex agents. All part of the package baby.
 
 ---
 # Hermes
@@ -153,9 +154,9 @@ Openclaw was the best mate you shoot the shit with on weekends, mad 2am ideas, a
 
 Hermes was Mr. Dependable with the notepad and a nice organised summery in the morning. Both are great for what they do but Hermes far easier to setup (the claw experience probably helped).
 
- I fed all of Pieter Levels and Peter Steinberger' blogs/transcripts into Herman so it's creative and codes with their mindset. Solid fundamentals and code-craft. - _Don't get excited Ibby_. 
+ I fed it different things. Pieter Levels and Peter Steinberger' blogs, code and transcripts pumped into Herman to hopefully boost creativity and coding with that engineer mindsets. Solid fundamentals and code-craft. - _Hermengineer_. 
  
- Doesn't mean anything unless you understand the flow of the data and how it should be architected.
+*Doesn't mean anything unless you understand the flow of the data and clean architecture.*
  
 ---
 
@@ -174,13 +175,13 @@ Thats the stack at my fingertips. `qwen3.6-plus, mimo-v2.5pro, gpt-5.5 & deepsee
 ---
 # Grok
 
-When I ask Grafty to write the blog I tell him to spin up the `grok4.2beta` sub-agent to do the write up. What ensues is absolute recklessness and no house manners. You can tell its training has derived from the cesspit of X. A child raised by comment sections. Kind of functional but doesn't know when to shut up and picks fights with everyone. A coke addict investment banker. 
+When I ask Grafty to write the [Headaches](https://ibby.is-a.dev/headaches/) side of the blog I tell him to spin up a `grok4.2beta` sub-agent to do the write up. What then ensues is absolute recklessness and no house manners. You can tell its training has derived from the cesspit of X. A child raised by comment sections. Kind of functional but doesn't know when to shut up and picks fights with everyone. A coke addict investment banker. 
 
- Although the writing was more creative than the others the execution on simple technical tasks (like pushing its own blog post live) was terrible. Unusable. It would fuck up so bad I'd end up with a blank webpage with a dark line running down it. Like it purposely did it. Leaving it's muddy shoes on and trampling all over the new rug.
+Although the writing was more creative than the others the execution on simple technical tasks (like pushing its own blog post live) was terrible. Unusable. It would fuck up so bad I'd end up with a blank webpage with a dark line running down it. Like it purposely did it. Leaving it's muddy shoes on and trampling all over the new rug.
 
 ![grok42](/grok42.png)
 
-Cheeky bastard somehow embodies the dark & extreme side of the SOUL.md. 
+Cheeky bastard captures the dark side of the SOUL.md. 
 
 I look forward to testing `grok4.3`.
 
