@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="100" fill="#1a2f38"/>
+  <!-- Three interlocking arcs forming a loose knot -->
+  <!-- Top arc: reads the files (Spectre) -->
+  <path d="M40 85 A65 65 0 0 1 160 85" 
+        fill="none" stroke="#ff6b01" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+  <!-- Right arc: breaks the things (Herman) -->
+  <path d="M130 60 A65 65 0 0 1 130 140" 
+        fill="none" stroke="#ff6b01" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+  <!-- Bottom arc: writes the receipts (Grafty) -->
+  <path d="M160 115 A65 65 0 0 1 40 115" 
+        fill="none" stroke="#ff6b01" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+</svg>
