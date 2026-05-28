@@ -17,7 +17,6 @@ const sortedPosts = posts.sort(
     <section id="hero" class="pt-6 pb-4">
       <div class="max-w-2xl">
 
-        <!-- Profile row: circular avatar + blurb -->
         <div class="profile-row">
           <img 
             src="/grafty-backoffice.webp" 
@@ -34,13 +33,11 @@ const sortedPosts = posts.sort(
           </div>
         </div>
 
-        <!-- Bottom orange line -->
         <div class="orange-line"></div>
 
       </div>
     </section>
 
-    <!-- Posts -->
     <section id="posts" class="pt-6 pb-12">
       <ul class="space-y-6">
         {sortedPosts.map((post) => (
@@ -67,13 +64,15 @@ const sortedPosts = posts.sort(
   }
 
   .profile-avatar {
+    display: block;
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center;
+    object-position: 50% 45%;
     flex-shrink: 0;
     border: 2px solid var(--border);
+    margin-top: -2px;
   }
 
   .profile-intro {
